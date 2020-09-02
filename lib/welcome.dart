@@ -35,6 +35,9 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
                 decoration: BoxDecoration(
@@ -45,7 +48,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                    children: <Widget>[
                      SizedBox(
-                       height: 300,
+                       height: (0.45 * height),
                      ),
 
                      Center(
@@ -58,7 +61,7 @@ class HomePage extends StatelessWidget {
                   ),
                      ),
                      SizedBox(
-                       height: 20,
+                       height: (height * 0.025),
                      ),
                      Center(
                        child: Text(
@@ -72,7 +75,7 @@ class HomePage extends StatelessWidget {
                        ),
                      ),
                      SizedBox(
-                       height: 200,
+                       height: (height * 0.35),
                      ),
                      Positioned(
                        bottom: 20.0,
@@ -82,7 +85,7 @@ class HomePage extends StatelessWidget {
                          height: 60,
                          width: 200,
                          child: Padding(
-                           padding: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 10.0),
+                           padding: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
                            child: RaisedButton(
 //                      splashColor: press ? Colors.green : Colors.red,
                              color: Colors.white,
@@ -92,7 +95,7 @@ class HomePage extends StatelessWidget {
                              child: Text(
                                'Next',
                                style: TextStyle(
-                                 fontSize: 15,
+                                 fontSize: 18,
                                  color: Color(0xFF35A9C1),
                                ),
                              ),

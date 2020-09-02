@@ -25,6 +25,10 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
+
     return Scaffold(
       backgroundColor: Color(0xFF46A1DD),
       bottomNavigationBar: CurvedNavigationBar(
@@ -97,8 +101,8 @@ class _DashboardState extends State<Dashboard> {
                 Positioned(
                   bottom: 0.0,
                   child: Container(
-                    height: 500,
-                      width: 375,
+                    height: (height - height * 0.25),
+                      width: size,
                       decoration: BoxDecoration(
                         color: Color(0xFFF6F6F6),
                           borderRadius: BorderRadius.only(
@@ -179,8 +183,8 @@ class _DashboardState extends State<Dashboard> {
                     Positioned(
                       bottom: 0,
                       child: Container(
-                        height: 420,
-                        width: 380,
+                        height: (height - 0.3 * height),
+                        width: size,
                         color: Color(0xFFF3F3F3),
                         child: ListView.builder(
                           itemCount: itemms.length,
@@ -205,13 +209,15 @@ List <String> itemms = ['1', '2', '3', '4', '5', '6', '7', '8', '8'];
 class Sudocards extends StatelessWidget {
   Sudocards(this.texts);
   String texts;
+
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(5.0, 7.0, 5.0, 7.0),
+      padding: const EdgeInsets.fromLTRB(5.0, 7.0, 10.0, 7.0),
       child: Container(
         height: 80,
-        width: 360,
+        width: size,
         child: Card(
             shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -221,7 +227,7 @@ class Sudocards extends StatelessWidget {
         topLeft: Radius.circular(8),
         ),
         ),
-        elevation: 5.0,
+        elevation: 1.0,
           child: Stack(
             children: <Widget>[
               Padding(
